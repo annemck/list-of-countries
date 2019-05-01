@@ -1,7 +1,9 @@
 <template lang="html">
-  <div class="heading">
-    <h1>Countries of the World</h1>
-    <search ></search>
+  <div>
+    <div class="heading">
+      <h1>Countries of the World</h1>
+      <search :countries="countries"></search>
+    </div>
     <div class="main-container">
       <!-- <country-list :countries="countries"></country-list> -->
       <country-select :countries="countries"></country-select>
