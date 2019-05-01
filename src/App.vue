@@ -1,8 +1,10 @@
 <template lang="html">
   <div class="heading">
     <h1>Countries of the World</h1>
+    <search ></search>
     <div class="main-container">
-      <country-list :countries="countries"></country-list>
+      <!-- <country-list :countries="countries"></country-list> -->
+      <country-select :countries="countries"></country-select>
       <country-detail :country="selectedCountry"></country-detail>
     </div>
   </div>
@@ -12,6 +14,8 @@
 import CountryList from './components/CountryList.vue';
 import { eventBus } from './main.js';
 import CountryDetail from './components/CountryDetail.vue';
+import CountrySelect from './components/CountrySelect.vue';
+import Search from './components/Search.vue'
 
 export default {
   name: 'app',
@@ -32,7 +36,9 @@ export default {
   },
   components: {
     'country-list': CountryList,
-    'country-detail': CountryDetail
+    'country-detail': CountryDetail,
+    'country-select': CountrySelect,
+    'search': Search
   }
 }
 </script>
