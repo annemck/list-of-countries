@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <input class="search" type="text" name="search" v-model="searchText" placeholder="Search countries...">
-    <p v-for="(country, index) in countries"></p>
+    <p v-for="(country, index) in returnedCountries">{{country.name}}</p>
   </div>
 </template>
 
@@ -11,18 +11,20 @@ export default {
   props: ['countries'],
   data() {
     return {
-      searchText: null
+      searchText: null,
+      returnedCountries: []
     }
   },
   computed: {
     filteredCountries(){
       if(this.searchText){
+        console.log(this.searchText);
         return this.countries.filter((country) => {
-          return country.name.startsWith(this.searchText);
+          this.returnedCountries.push(country.name.startsWith(this.searchText));
         })
       }
       else {
-        return this.countries;
+        return 'Country Not Found';
       }
     }
   }
