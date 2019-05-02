@@ -1,9 +1,9 @@
 <template lang="html">
   <div v-if="country">
     <img :src="country.flag" alt="country flag">
-    <p>{{country.name}}</p>
-    <p>{{country.capital}}</p>
-    <p>{{country.population}}</p>
+    <h4>{{country.name}}</h4>
+    <p>Capital: {{country.capital}}</p>
+    <p>Population: {{country.population}}</p>
     <p>Languages: </p>
     <ul>
       <li v-for="(language, index) in country.languages">{{language.name}}</li>
@@ -22,6 +22,9 @@ export default {
 img {
   max-width: 300px;
   padding: 1em;
+  padding-left: 2em;
+}
+h4 {
   padding-left: 2em;
 }
 p {
