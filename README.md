@@ -1,4 +1,7 @@
-# countries
+# Country List
+This was a CodeClan lab to practice using multiple components and the correct flow of data in Vue. We done this by creating a list of countries that could then render more detail about that specific country.
+
+# Default readme:
 
 ## Project setup
 ```
